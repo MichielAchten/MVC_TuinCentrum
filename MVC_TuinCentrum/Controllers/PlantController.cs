@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC_TuinCentrum.Models;
+using System.IO;
 
 namespace MVC_TuinCentrum.Controllers
 {
@@ -131,6 +132,25 @@ namespace MVC_TuinCentrum.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [HttpGet]
+        public ViewResult Uploaden(int id)
+        {
+            return View(id);
+        }
+
+        [HttpPost]
+        public ActionResult FotoUpload(int id)
+        {
+            if (Request.Files.Count > 0)
+            {
+                var foto = Request.Files[0];
+                var absoluutPadNaarDir = this.HttpContext.Server.MapPath("~/Images/Fotos");
+                var absoluutPadNaarFoto = Path.Combine(absoluutPadNaarDir, id + ".jpg");
+                foto.SaveAs(absoluutPadNaarFoto);
+            }
+            return RedirectToAction("Index");
         }
     }
 }
