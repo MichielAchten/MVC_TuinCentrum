@@ -21,6 +21,7 @@ namespace MVC_TuinCentrum.Controllers
         }
 
         // GET: Leverancier/Details/5
+        [OverrideActionFilters]
         public ActionResult Details(int? id)
         {
             if (id == null)

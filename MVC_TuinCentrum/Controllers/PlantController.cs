@@ -8,9 +8,11 @@ using System.Web;
 using System.Web.Mvc;
 using MVC_TuinCentrum.Models;
 using System.IO;
+using MVC_TuinCentrum.Filters;
 
 namespace MVC_TuinCentrum.Controllers
 {
+    [StatistiekActionFilter]
     public class PlantController : Controller
     {
         private MVCTuinCentrumEntities db = new MVCTuinCentrumEntities();
