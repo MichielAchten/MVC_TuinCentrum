@@ -124,5 +124,23 @@ namespace MVC_TuinCentrum.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [Route("Leveranciers/{postnr?}")]
+        public ActionResult FindLeveranciersMetPostNr(string postnr)
+        {
+            if (postnr == null)
+            {
+                return View("Index", db.Leveranciers.ToList());
+            }
+            else
+            {
+                List<Leverancier> leveranciersLijst = new List<Leverancier>();
+                leveranciersLijst = (from leverancier in db.Leveranciers
+                                     where leverancier.PostNr == postnr
+                                     select leverancier).ToList();
+                ViewBag.postnr = postnr;
+                return View(leveranciersLijst);
+            }
+        }
     }
 }

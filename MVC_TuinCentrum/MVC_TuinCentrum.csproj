@@ -213,8 +213,10 @@
     </Compile>
     <Compile Include="Models\ZoekSoortForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryStringConstraint.cs" />
     <Compile Include="Services\SoortService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ValuesConstraint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -312,6 +314,11 @@
     <Content Include="Views\Soort\ZoekForm.cshtml" />
     <Content Include="Views\Plant\Uploaden.cshtml" />
     <Content Include="Views\Statistiek\Index.cshtml" />
+    <Content Include="Views\Plant\FindPlantenBySoortNaam.cshtml" />
+    <Content Include="Views\Plant\FindPlantenByLeverancier.cshtml" />
+    <Content Include="Views\Plant\FindPlantenBetweenPrijzen.cshtml" />
+    <Content Include="Views\Plant\FindPlantenVanEenKleur.cshtml" />
+    <Content Include="Views\Leverancier\FindLeveranciersMetPostNr.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

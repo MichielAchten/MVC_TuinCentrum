@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace MVC_TuinCentrum.Controllers
 {
+    [RoutePrefix("Thuis")]
+    [Route("{action=index}")]
     public class HomeController : Controller
     {
         public ActionResult Index()
