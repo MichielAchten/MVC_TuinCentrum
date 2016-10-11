@@ -227,7 +227,7 @@ namespace MVC_TuinCentrum.Controllers
             }
         }
 
-        [Route("plantenprijzen/{btw:values(inclusief|exclusief)}")]
+        [Route("plantenprijzen/{btw:values(inclusief|exclusief)}", Name="btwinex")]
         public ActionResult PrijsLijst(string btw)
         {
             ViewBag.btw = btw;
